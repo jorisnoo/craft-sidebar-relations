@@ -5,6 +5,7 @@ namespace Noo\CraftSidebarRelations;
 use Craft;
 use craft\elements\Entry;
 use craft\events\RegisterElementSourcesEvent;
+use Noo\CraftSidebarRelations\config\SidebarRelationsConfig;
 use yii\base\Event;
 use yii\base\Module;
 
@@ -31,11 +32,11 @@ class SidebarRelations extends Module
     {
         $config = Craft::$app->config->getConfigFromFile('sidebar-relations');
 
-        if (!$config) {
+        if (!$config instanceof SidebarRelationsConfig || empty($config->sources)) {
             return;
         }
 
-        foreach ($config as $item) {
+        foreach ($config->sources as $item) {
             $section = Craft::$app->entries->getSectionByHandle($item['section']);
 
             if (!$section) {
@@ -62,11 +63,11 @@ class SidebarRelations extends Module
 
                 foreach ($entries as $entry) {
                     $nested[] = [
-                        'key' => $sourceKey . '/relatedTo:' . $entry->id,
+                        'key' => 'relatedTo:' . $entry->id,
                         'label' => $entry->title,
                         'criteria' => [
                             'sectionId' => $section->id,
-                            'relatedTo' => ['targetElement' => $entry],
+                            'relatedTo' => $entry->id,
                         ],
                     ];
                 }
