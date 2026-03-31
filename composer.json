@@ -1,0 +1,14 @@
+{
+    "name": "jorisnoo/craft-sidebar-relations",
+    "description": "Adds nested element sources to the Craft CMS sidebar based on entry relations",
+    "type": "craft-module",
+    "license": "MIT",
+    "require": {
+        "craftcms/cms": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Noo\\CraftSidebarRelations\\": "src/"
+        }
+    }
+}
