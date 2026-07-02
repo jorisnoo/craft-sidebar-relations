@@ -3,11 +3,19 @@
     "description": "Adds nested element sources to the Craft CMS sidebar based on entry relations",
     "type": "craft-module",
     "license": "MIT",
-    "keywords": ["craft", "cms", "craftcms", "sidebar", "relations", "navigation"],
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "sidebar",
+        "relations",
+        "navigation"
+    ],
     "authors": [
         {
             "name": "Joris Noordermeer",
-            "email": "contact@noordermeer.ch"
+            "email": "contact@noordermeer.ch",
+            "homepage": "https://github.com/jorisnoo"
         }
     ],
     "require": {
