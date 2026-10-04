@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0](https://github.com/jorisnoo/craft-sidebar-relations/releases/tag/v1.0.0) (2026-05-12)
+## [1.0.0](https://github.com/jorisnoo/craft-sidebar-relations/releases/tag/1.0.0) (2026-05-12)
 
 ### Features
 
