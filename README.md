@@ -64,6 +64,8 @@ Each source in the array accepts the following keys:
 
 In the example above, the "Articles" section in the sidebar would get nested items for each entry in the "Categories" section. Clicking a nested item filters the article list to only show articles related to that category.
 
+Nested items are only added for users who have permission to view the relation section. The relation entries are cached, and the cache is cleared whenever an entry in the relation section changes.
+
 ## License
 
 The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
