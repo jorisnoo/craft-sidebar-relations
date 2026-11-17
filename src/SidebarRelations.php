@@ -32,18 +32,18 @@ class SidebarRelations extends Module
     {
         $config = Craft::$app->config->getConfigFromFile('sidebar-relations');
 
-        if (!$config instanceof SidebarRelationsConfig || empty($config->sources)) {
+        if (! $config instanceof SidebarRelationsConfig || empty($config->sources)) {
             return;
         }
 
         foreach ($config->sources as $item) {
             $section = Craft::$app->entries->getSectionByHandle($item['section']);
 
-            if (!$section) {
+            if (! $section) {
                 continue;
             }
 
-            $sourceKey = 'section:' . $section->uid;
+            $sourceKey = 'section:'.$section->uid;
 
             foreach ($event->sources as &$source) {
                 if (($source['key'] ?? null) !== $sourceKey) {
@@ -52,7 +52,7 @@ class SidebarRelations extends Module
 
                 $query = Entry::find()->section($item['relation']);
 
-                if (!empty($item['where'])) {
+                if (! empty($item['where'])) {
                     foreach ($item['where'] as $field => $value) {
                         $query->$field($value);
                     }
@@ -63,7 +63,7 @@ class SidebarRelations extends Module
 
                 foreach ($entries as $entry) {
                     $nested[] = [
-                        'key' => 'relatedTo:' . $entry->id,
+                        'key' => 'relatedTo:'.$entry->id,
                         'label' => $entry->title,
                         'criteria' => [
                             'sectionId' => $section->id,
