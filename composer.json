@@ -23,7 +23,7 @@
         "craftcms/cms": "^5.0"
     },
     "require-dev": {
-        "laravel/pint": ">=1.18.1"
+        "laravel/pint": "^1.18.1"
     },
     "autoload": {
         "psr-4": {
@@ -31,7 +31,14 @@
         }
     },
     "scripts": {
-        "lint": "pint"
+        "lint": "pint",
+        "test": "bash tests/run.sh",
+        "check": [
+            "@composer validate --strict --no-check-publish",
+            "@composer audit",
+            "pint --test",
+            "@test"
+        ]
     },
     "config": {
         "allow-plugins": {

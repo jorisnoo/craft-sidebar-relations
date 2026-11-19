@@ -3,10 +3,6 @@
   "sign_tag": true,
   "version_files": [],
   "checks": [
-    [
-      "composer",
-      "validate",
-      "--no-check-publish"
-    ]
+    ["composer", "check"]
   ]
 }
