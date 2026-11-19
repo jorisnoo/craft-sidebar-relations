@@ -19,4 +19,5 @@ lint-check:
     vendor/bin/pint --test
 
 # Run all checks
-check: lint-check
+check:
+    composer check

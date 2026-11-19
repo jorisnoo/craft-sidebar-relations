@@ -11,8 +11,10 @@ Release from `main` using an explicit version without a `v` prefix. `CHANGELOG.m
 Configured release checks:
 
 ```sh
-composer validate --no-check-publish
+composer check
 ```
+
+This validates Composer metadata, audits dependencies, checks Pint, and runs the Craft integration suite. Install PHP with `pdo_pgsql` and PostgreSQL server tools (`pg_config`, `initdb`, `pg_ctl`) first. The test creates a temporary, socket-only PostgreSQL cluster; it does not connect to an existing project or database.
 
 Install the project’s normal dependencies first. The helper runs these checks when publishing; dry-run prints them without executing them. Run any additional checks needed for the changed behavior before committing.
 

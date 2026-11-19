@@ -61,8 +61,13 @@ Each source in the array accepts the following keys:
 - `section` — The handle of the section to add nested sources to
 - `relation` — The handle of the section whose entries will become the nested source items
 - `where` — (optional) Additional query parameters applied to the relation query (e.g. `level`, `status`, `orderBy`)
+- `limit` — Maximum number of titles per configured source **per site**, default `100`. Set a positive integer to show more or fewer items. Use `where.orderBy` to choose which items appear first.
 
 In the example above, the "Articles" section in the sidebar would get nested items for each entry in the "Categories" section. Clicking a nested item filters the article list to only show articles related to that category.
+
+The module runs on the full entries index, not in element-picker dialogs. Each site gets its own labels from live entries by default; Craft’s site and section permissions and peer-entry restrictions apply. Children keep the parent section’s filters, New entry menu, sort order, and structure settings. Title queries use Craft’s invalidatable element-query cache.
+
+Several items can target the same section. Their children are appended in configuration order; repeated matches appear only once per site. A plain array with a `sources` key (including Craft’s multi-environment format) also works. Invalid items are skipped with a Craft log warning. Filters cannot override the configured relation section, site scope, or permissions.
 
 ## License
 

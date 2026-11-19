@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-11-19
+
+- Preserve the parent section’s permissions, filters, New entry action, sorting and structure settings when selecting nested entries.
+- Show site-specific relation titles only from sections and entries the current user can view. Children from multiple rules or other extensions are no longer overwritten.
+- Limit each rule to 100 titles per site by default (adjust `limit` if you need more). Cache title-only queries, and skip element-picker dialogs.
+- Accept array and environment-specific configuration alongside the fluent API. Invalid sources are logged and skipped without breaking the entries index.
+
 ## [1.0.0](https://github.com/jorisnoo/craft-sidebar-relations/releases/tag/1.0.0) (2026-05-12)
 
 ### Features
